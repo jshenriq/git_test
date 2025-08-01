@@ -1,0 +1,537 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #1A1A1A;
+    background-color: #e3f0e3;  /*verde anterior era: #E8F1E8*/
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+}
+
+/* Container Global */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+
+/* Estilos do Header */
+.main-header {
+    width: 100%;
+    background-color: #e3f0e3; /*verde anterior #E8F1E8*/
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(26, 26, 26, 0.05);
+    z-index: 900;
+    position: relative; /*adicionado posição relativa pra as particulas não sobrepor */
+    
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    
+}
+
+.header-left h1 {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #1A1A1A;
+    margin: 0;
+    user-select: none;
+    transition: color .3s ease;
+}
+
+.header-left h1:hover {
+    color: #666666;
+}
+
+.header-picture {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    user-select: none;   
+}
+
+.header-right a {
+    color: #1A1A1A;
+    font-size: 1.2em;
+    margin-left: 20px;
+    text-decoration: none;
+    
+}
+
+
+/*efeito underline animado nos links do header */
+.nav-link {
+  position: relative;
+  display: inline-block;
+  
+  text-decoration: none;
+  font-weight: 500;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #78C2AD; /* Verde menta claro */
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #78C2AD; 
+}
+
+
+
+.for-mobile {
+    display: none;
+}
+
+/* ESTILO PRA SEÇÃO HERO, E HERO-CONTENT-CONTAINER */
+.hero-section {
+    
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    background-color: #e3f0e3;  /*verde anterior: #e8f1e8*/
+    position: relative;
+    overflow: hidden;
+     /*padding a esquerda pra empurrar o conteudo mais pra direita*/
+}
+
+.hero-section .hero-content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 3;
+    
+}
+
+.hero-greeting {
+    font-size: 1.8em;
+    color: #333333;
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+
+.hero-title {
+    font-size: 4em;
+    color: #1A1A1A;
+    margin-bottom: 10px;
+    line-height: 1.1;
+    font-weight: 600;
+    z-index: 3;
+    letter-spacing: 6px;
+    
+}
+
+.hero-description {
+    font-size: 1.5em;
+    color: #333333;
+    max-width: 700px;
+    margin-bottom: 40px;
+    line-height: 1.4;
+    z-index: 3;
+}
+
+/* Estilos para Botão */
+.btn-primary {
+    background-color: #1A1A1A;
+    color: #FFFFFF;
+    padding: 15px 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: 
+        background-color 0.3s ease, 
+        color 0.3s ease, 
+        box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(120, 194, 173, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: #78C2AD;
+    color: #fff;
+    box-shadow:
+        0 0 5px #78C2AD,
+        0 0 10px #78C2AD,
+        0 0 20px #78C2AD;
+}
+
+
+
+/*caixa flex texto e lateral */
+.caixa-flex {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    padding-left: 30px;
+}
+
+
+
+
+/*icones abaixo do botao ver meus projetos*/
+.social-icons {
+    display: flex;
+    gap: 30px;
+    margin-top: 50px;
+    z-index: 4;
+        
+}
+
+.social-icons a {
+    font-size: 40px;
+    color: #333333; 
+    padding: 0 !important;
+    line-height: 0;
+    transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.4s ease;
+}
+
+/* ÍCONES SOCIAIS - EFEITO DE COR E NEON NO HOVER */
+.social-icons a:hover {
+    color: #78C2AD; /* Revela a cor no hover */
+    transform: scale(1.2);
+    text-shadow:         
+        0 0 5px #78c2ad,
+        0 0 10px #78c2ad,
+        0 0 20px #78c2ad;
+    outline: none;
+}
+
+/* Card que envolve o ícone */
+.social-icons-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background-color: rgba(51, 51, 51, 0.05); /* Fundo quase transparente */
+    box-shadow: none; /* Sem sombra por padrão */
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: 1px solid rgba(51, 51, 51, 0.1); 
+    z-index: 3;
+}
+
+
+.social-icons a:hover .social-icons-card, 
+.social-icons-card:hover { 
+    background-color: rgba(120, 194, 173, 0.1);
+    border-color: rgba(120, 194, 173, 0.2);
+}
+
+
+.social-icons-card:hover a {
+     color: #78C2AD;
+     transform: scale(1.2);
+     text-shadow: 0 0 5px #78c2ad, 0 0 10px #78c2ad, 0 0 20px #78c2ad;
+}
+
+
+.social-icons-card a {
+    color: #333333;
+    transform: scale(1);
+    text-shadow: none;
+    transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.4s ease;
+}
+
+
+/* estilo do hero graphic ao lado do conteudo de hero-content-container*/
+.hero-graphic i {
+    font-size: 20rem; /* TAMANHO ENORME DO ÍCONE */
+    color: rgba(120, 194, 173, 0.35); /* MAIS OPACIDADE para destacar mais */
+    text-shadow: 0 0 20px rgba(120, 194, 173, 0.3); /* Sombra mais pronunciada */
+    user-select: none;
+    pointer-events: none;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Curva de animação mais suave */
+}
+
+
+
+
+
+
+
+/*ANIMAÇÃO DE MOVIMENTO pro hero-content-container e pro div social-icons*/
+
+.hero-content-container .for-desktop > *,
+.hero-content-container .off-screen > *,
+.hero-content-container .social-icons {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hero-content-container.show .for-desktop > *,
+.hero-content-container.show .off-screen > *,
+.hero-content-container.show .social-icons {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delays para stagger */
+.hero-content-container.show .for-desktop > :nth-child(1),
+.hero-content-container.show .off-screen > :nth-child(1) {
+  transition-delay: 0.3s;
+}
+.hero-content-container.show .for-desktop > :nth-child(2),
+.hero-content-container.show .off-screen > :nth-child(2) {
+  transition-delay: 0.6s;
+}
+.hero-content-container.show .for-desktop > :nth-child(3),
+.hero-content-container.show .off-screen > :nth-child(3) {
+  transition-delay: 0.9s;
+}
+.hero-content-container.show .for-desktop > :nth-child(4),
+.hero-content-container.show .off-screen > :nth-child(4) {
+  transition-delay: 1.2s;
+}
+
+/* Social icons */
+.hero-content-container.show .social-icons {
+  transition-delay: 1.5s;
+}
+
+/*hero graphic animation */
+.hero-graphic i {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.hero-graphic.show i {
+  opacity: 1;
+  transform: scale(1);
+  transition-delay: .8s;
+}
+
+
+
+
+
+/* ADICIONANDO RESPONSIVIDADE pra tela 780px width*/
+@media (min-width: 850px) and (max-width: 1145px) {
+   /* Ajusta o tamanho da fonte para manter a legibilidade */
+    .hero-title {
+        font-size: 3.5em; 
+    }
+
+    .hero-description {
+        font-size: 1.3em; 
+        max-width: 90%;
+    }
+
+    /* Reduz o espaçamento entre as colunas para otimizar o espaço */
+    .caixa-flex {
+        gap: 30px;
+    }
+
+    /* Reduz o tamanho do ícone de fundo para não dominar a tela */
+    .hero-graphic i {
+        font-size: 16rem;
+    }
+   
+}
+
+@media (max-width: 849px) {
+    /* Reorganiza o layout para dispositivos móveis */
+    .caixa-flex {
+        
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        width: 100%;
+        gap: 0;
+        padding-left: 0;
+        
+    }
+    
+    .for-desktop {
+        display: none;
+    }
+    .for-mobile {
+        display: block;
+    }
+    .hero-content-container {
+        
+        align-items: center;
+        text-align: left;
+        
+    }
+
+    
+    .hero-greeting {
+        font-size: 1.5em;
+    }
+
+    .hero-title {
+        font-size: 2.5em;
+        letter-spacing: 2px;
+        line-height: 1.2;
+    }
+
+    .hero-description {
+        font-size: 1.1em;
+        max-width: 90%;
+        margin-bottom: 20px;
+    }
+
+    
+    .hero-graphic {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        top: 30%;
+        left: 0;
+        text-align: center;
+        opacity: 0.7;
+    }
+
+    .hero-graphic i {
+        font-size: 12rem;
+        opacity: 0.1;
+    }
+
+    
+    .social-icons {
+        gap: 15px;
+        margin-top: 20px;
+        align-self: center;
+    }
+
+    
+    .btn-primary {
+        width: 100%;
+        max-width: 300px;
+        padding: 12px 20px;
+    }
+}
+
+
+/* Estilo para o container das partículas */
+#three-particles-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*animação de scroll-indicator setas com fade down*/
+.arrow-scroll {
+    position: relative;
+    height: 4em;
+    
+}
+
+.arrow {
+    border: solid #78C2AD; /* cor verde neon */
+    border-width: 0 5px 5px 0;
+    display: inline-block;
+    padding: 12px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform:
+        translateX(-50%)
+        rotate(45deg);
+    filter:
+        drop-shadow(0 0 6px #78C2AD)
+        drop-shadow(0 0 12px #78C2AD);
+}
+
+.arrow:nth-child(2) {
+    animation:
+     arrow1 1.5s
+     ease-in-out infinite;
+}
+
+.arrow:nth-child(3) {
+    animation: 
+        arrow2 1.5s
+        ease-in-out infinite;
+}
+
+@keyframes arrow1 {
+    100% {
+        opacity: 0;
+        top: 100%;
+    }
+}
+
+@keyframes arrow2 {
+    100% {
+        opacity: 0;
+        top: 50%;
+    }
+}
